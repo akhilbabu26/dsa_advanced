@@ -2,10 +2,7 @@ package main
 
 import "fmt"
 
-// ─────────────────────────────────────────
 // MIN HEAP
-// ─────────────────────────────────────────
-
 type MinHeap struct {
 	data []int
 }
@@ -18,7 +15,7 @@ func (h *MinHeap) size() int        { return len(h.data) }
 
 // Insert — add to end, bubble UP — O(log n)
 func (h *MinHeap) Insert(val int) {
-	h.data = append(h.data, val)
+	h.data = append(h.data, val) 
 	h.bubbleUp(len(h.data) - 1)
 }
 
@@ -82,10 +79,7 @@ func (h *MinHeap) Peek() (int, bool) {
 	return h.data[0], true
 }
 
-// ─────────────────────────────────────────
 // MAX HEAP
-// ─────────────────────────────────────────
-
 type MaxHeap struct {
 	data []int
 }
@@ -160,17 +154,10 @@ func (h *MaxHeap) Peek() (int, bool) {
 	return h.data[0], true
 }
 
-// ─────────────────────────────────────────
 // MAIN
-// ─────────────────────────────────────────
 
 func main() {
-	fmt.Println("═══════════════════════════")
-	fmt.Println("         MIN HEAP          ")
-	fmt.Println("═══════════════════════════")
-
 	minH := &MinHeap{}
-
 	// Insert
 	for _, v := range []int{9, 3, 7, 1, 5, 8, 2} {
 		minH.Insert(v)
@@ -197,12 +184,7 @@ func main() {
 	}
 	fmt.Println()
 
-	fmt.Println("\n═══════════════════════════")
-	fmt.Println("         MAX HEAP          ")
-	fmt.Println("═══════════════════════════")
-
 	maxH := &MaxHeap{}
-
 	// Insert
 	for _, v := range []int{9, 3, 7, 1, 5, 8, 2} {
 		maxH.Insert(v)
