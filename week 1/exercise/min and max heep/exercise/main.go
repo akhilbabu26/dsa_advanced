@@ -163,13 +163,11 @@ func (h *MaxHeap) ExtractMax() (int, bool) {
 		left := 2*i + 1
 		right := 2*i + 2
 
-		if left < n &&
-			h.data[left] > h.data[largest] {
+		if left < n && h.data[left] > h.data[largest] {
 			largest = left
 		}
 
-		if right < n &&
-			h.data[right] > h.data[largest] {
+		if right < n && h.data[right] > h.data[largest] {
 			largest = right
 		}
 
@@ -196,9 +194,7 @@ func (h *MaxHeap) Heapify(arr []int) {
 		current := i
 
 		for {
-
 			largest := current
-
 			left := 2*current + 1
 			right := 2*current + 2
 
